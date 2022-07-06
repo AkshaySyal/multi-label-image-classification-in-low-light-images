@@ -3,8 +3,10 @@
 # Project Description
 Object detection in low-illumination environments is very challenging. Due to insufficient reflected light under low-illumination, the image captured contains a lot of dark areas and noise.
 
-We use Image Data Generator to apply image preprocessing like histogram equalization, performing scaling and feed the images in batches to our model for
-training (to avoid memory issues while training). We will first train our own CNN model without applying any image processing to establish a baseline performance.
-Then we will train an autoencoder on the training dataset. Then we will use the encoder of the autoencoder and feed its output to a CNN model and train the CNN
-model. We will freeze the encoder layer while training the CNN model. The encoder here acts as a feature extractor that also performs dimensionality reduction
-on the dataset. The idea of using this architecture is taken from this research paper [link](https://www.mdpi.com/1424-8220/21/22/7731). It has shown to improve accuracy of CNN models on various datasets over various CNN architectures. We hypothesize that we will also receive similar results.
+Dataset link: https://github.com/cs-chan/Exclusively-Dark-Image-Dataset
+
+To enhance object detection capability of CNN image processing techniques like histogram equalization is applied. Then an autoencoder is trained on the training dataset. It will act as a feature extractor. Autoencoders is an unsupervised dimensionality reduction technique, which can filter out noise and redundant information and create robust and stable feature representations from image data. This convolutional autoencoder is utilised for compressing and filtering out noise and redundant information from initial high dimensionality input images and then this compressed output is fed into a convolutional neural network. 
+
+This approach is adopted from this research paper: https://www.mdpi.com/1424-8220/21/22/7731
+
+
